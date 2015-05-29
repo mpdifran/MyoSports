@@ -12,10 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var dataColector = MyoDataCollector()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        TLMHub.sharedHub().applicationIdentifier = "com.mdfprojects.MyoSports"
+        TLMHub.sharedHub().shouldNotifyInBackground = true
+        TLMHub.sharedHub().lockingPolicy = TLMLockingPolicy.None
+        TLMHub.sharedHub().attachToAdjacent()
+
         return true
     }
 

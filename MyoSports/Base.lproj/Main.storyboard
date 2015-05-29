@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MyoSports" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +15,56 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fz4-3B-ctx">
+                                <rect key="frame" x="16" y="28" width="568" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="RYv-jG-W9X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI7-xC-3BG">
+                                <rect key="frame" x="16" y="116" width="568" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="at4-2X-eae"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.79989252649999998" green="0.0" blue="0.061590704429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-tD-HvC">
+                                <rect key="frame" x="16" y="480" width="568" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="h2d-AN-WPh"/>
+                                </constraints>
+                                <state key="normal" title="Start Recording">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8W4-t9-yEK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bI7-xC-3BG" firstAttribute="top" secondItem="Fz4-3B-ctx" secondAttribute="bottom" constant="8" id="B9u-qm-Z6L"/>
+                            <constraint firstItem="bI7-xC-3BG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="D4o-Ko-ful"/>
+                            <constraint firstItem="Fz4-3B-ctx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="FXW-MJ-llA"/>
+                            <constraint firstItem="Fz4-3B-ctx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="JPW-e0-dXz"/>
+                            <constraint firstItem="cYn-tD-HvC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="OCO-nR-On2"/>
+                            <constraint firstAttribute="trailing" secondItem="cYn-tD-HvC" secondAttribute="trailing" constant="16" id="Oab-bB-LJR"/>
+                            <constraint firstAttribute="trailing" secondItem="bI7-xC-3BG" secondAttribute="trailing" constant="16" id="The-XD-goc"/>
+                            <constraint firstAttribute="trailing" secondItem="Fz4-3B-ctx" secondAttribute="trailing" constant="16" id="mWh-lA-fLa"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cYn-tD-HvC" secondAttribute="bottom" constant="20" id="qUl-pM-D5H"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myoStatusLabel" destination="Fz4-3B-ctx" id="4V0-br-dgp"/>
+                        <outlet property="recordingButton" destination="cYn-tD-HvC" id="Muo-rD-msh"/>
+                        <outlet property="recordingStateLabel" destination="bI7-xC-3BG" id="ZY6-e8-tHP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,9 @@
 		FFB950811B17A1F6009C4A33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB950801B17A1F6009C4A33 /* Images.xcassets */; };
 		FFB950841B17A1F6009C4A33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB950821B17A1F6009C4A33 /* LaunchScreen.xib */; };
 		FFB950901B17A1F6009C4A33 /* MyoSportsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9508F1B17A1F6009C4A33 /* MyoSportsTests.swift */; };
+		FFB9509B1B17A27B009C4A33 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB9509A1B17A27B009C4A33 /* MyoKit.framework */; };
+		FFB950A01B17A4F5009C4A33 /* MyoEventExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9509F1B17A4F5009C4A33 /* MyoEventExtensions.swift */; };
+		FFB950A21B17A9B3009C4A33 /* MyoDataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB950A11B17A9B3009C4A33 /* MyoDataCollector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 		FFB950891B17A1F6009C4A33 /* MyoSportsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoSportsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB9508E1B17A1F6009C4A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFB9508F1B17A1F6009C4A33 /* MyoSportsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyoSportsTests.swift; sourceTree = "<group>"; };
+		FFB9509A1B17A27B009C4A33 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		FFB9509C1B17A42F009C4A33 /* MyoSports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyoSports-Bridging-Header.h"; sourceTree = "<group>"; };
+		FFB9509F1B17A4F5009C4A33 /* MyoEventExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoEventExtensions.swift; sourceTree = "<group>"; };
+		FFB950A11B17A9B3009C4A33 /* MyoDataCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoDataCollector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB9509B1B17A27B009C4A33 /* MyoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +69,7 @@
 			children = (
 				FFB950761B17A1F6009C4A33 /* MyoSports */,
 				FFB9508C1B17A1F6009C4A33 /* MyoSportsTests */,
+				FFB950991B17A20D009C4A33 /* Frameworks */,
 				FFB950751B17A1F6009C4A33 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +86,8 @@
 		FFB950761B17A1F6009C4A33 /* MyoSports */ = {
 			isa = PBXGroup;
 			children = (
+				FFB9509E1B17A4DF009C4A33 /* MyoExtensions */,
+				FFB9509D1B17A4D3009C4A33 /* MyoDataCollector */,
 				FFB950791B17A1F6009C4A33 /* AppDelegate.swift */,
 				FFB9507B1B17A1F6009C4A33 /* ViewController.swift */,
 				FFB9507D1B17A1F6009C4A33 /* Main.storyboard */,
@@ -91,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB950781B17A1F6009C4A33 /* Info.plist */,
+				FFB9509C1B17A42F009C4A33 /* MyoSports-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -110,6 +122,30 @@
 				FFB9508E1B17A1F6009C4A33 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFB950991B17A20D009C4A33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFB9509A1B17A27B009C4A33 /* MyoKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFB9509D1B17A4D3009C4A33 /* MyoDataCollector */ = {
+			isa = PBXGroup;
+			children = (
+				FFB950A11B17A9B3009C4A33 /* MyoDataCollector.swift */,
+			);
+			path = MyoDataCollector;
+			sourceTree = "<group>";
+		};
+		FFB9509E1B17A4DF009C4A33 /* MyoExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFB9509F1B17A4F5009C4A33 /* MyoEventExtensions.swift */,
+			);
+			path = MyoExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +197,11 @@
 				TargetAttributes = {
 					FFB950731B17A1F6009C4A33 = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					FFB950881B17A1F6009C4A33 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -214,6 +255,8 @@
 			files = (
 				FFB9507C1B17A1F6009C4A33 /* ViewController.swift in Sources */,
 				FFB9507A1B17A1F6009C4A33 /* AppDelegate.swift in Sources */,
+				FFB950A01B17A4F5009C4A33 /* MyoEventExtensions.swift in Sources */,
+				FFB950A21B17A9B3009C4A33 /* MyoDataCollector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,9 +383,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MyoSports/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/MyoSports/MyoSports-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -350,9 +399,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MyoSports/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/MyoSports/MyoSports-Bridging-Header.h";
 			};
 			name = Release;
 		};
