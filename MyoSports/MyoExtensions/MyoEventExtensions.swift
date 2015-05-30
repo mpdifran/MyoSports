@@ -27,10 +27,14 @@ extension TLMOrientationEvent {
 extension TLMAccelerometerEvent {
 
     func toCSV() -> String {
+        return toCSV(vector)
+    }
+
+    func toCSV(vector: TLMVector3) -> String {
         let values = [timestamp.timeIntervalSince1970.description,
-                      vector.x.description,
-                      vector.y.description,
-                      vector.z.description]
+            vector.x.description,
+            vector.y.description,
+            vector.z.description]
 
         return join(separator, values) + carriageReturn
     }

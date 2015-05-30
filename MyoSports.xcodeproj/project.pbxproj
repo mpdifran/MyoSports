@@ -16,6 +16,7 @@
 		FFB9509B1B17A27B009C4A33 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB9509A1B17A27B009C4A33 /* MyoKit.framework */; };
 		FFB950A01B17A4F5009C4A33 /* MyoEventExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9509F1B17A4F5009C4A33 /* MyoEventExtensions.swift */; };
 		FFB950F71B1A109E009C4A33 /* MyoDataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB950A11B17A9B3009C4A33 /* MyoDataCollector.swift */; };
+		FFB950F91B1A284F009C4A33 /* MyoMathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB950F81B1A284F009C4A33 /* MyoMathExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		FFB9509F1B17A4F5009C4A33 /* MyoEventExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoEventExtensions.swift; sourceTree = "<group>"; };
 		FFB950A11B17A9B3009C4A33 /* MyoDataCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoDataCollector.swift; sourceTree = "<group>"; };
 		FFB950F51B1A1098009C4A33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FFB950F81B1A284F009C4A33 /* MyoMathExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoMathExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB9509F1B17A4F5009C4A33 /* MyoEventExtensions.swift */,
+				FFB950F81B1A284F009C4A33 /* MyoMathExtensions.swift */,
 			);
 			path = MyoExtensions;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				FFB9507A1B17A1F6009C4A33 /* AppDelegate.swift in Sources */,
 				FFB950F71B1A109E009C4A33 /* MyoDataCollector.swift in Sources */,
 				FFB950A01B17A4F5009C4A33 /* MyoEventExtensions.swift in Sources */,
+				FFB950F91B1A284F009C4A33 /* MyoMathExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,8 @@ class MyoDataCollector: NSObject {
     private var myo: TLMMyo? {
         return TLMHub.sharedHub().myoDevices().first as? TLMMyo
     }
+    private let highPassFilterAlpha: Float = 0.8
+    private var gravityVector = TLMVector3Make(0, 0, 0)
 
     private var recordingStartDate: NSDate?
     private var documentDirectory: String?
@@ -117,9 +119,15 @@ class MyoDataCollector: NSObject {
 
     func onAccelerometer(notification: NSNotification!) {
         if let accelerometerEvent = notification.userInfo?[kTLMKeyAccelerometerEvent] as? TLMAccelerometerEvent {
+
+            // Apply a high pass filter to get rid of gravity
+            let accelVector = accelerometerEvent.vector
+            gravityVector = accelVector * highPassFilterAlpha + gravityVector * (1.0 - highPassFilterAlpha)
+
             if shouldRecord {
                 if let fileName = accelFileName {
-                    writeToFile(fileName, value: accelerometerEvent.toCSV(), queue: accelQueue)
+                    let linearVector = accelVector - gravityVector
+                    writeToFile(fileName, value: accelerometerEvent.toCSV(linearVector), queue: accelQueue)
                 }
             }
         }
