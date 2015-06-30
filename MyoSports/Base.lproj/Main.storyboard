@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R3z-DE-3Pz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Data Recording-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MyoSports" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fz4-3B-ctx">
-                                <rect key="frame" x="16" y="28" width="568" height="80"/>
+                                <rect key="frame" x="16" y="72" width="568" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="RYv-jG-W9X"/>
                                 </constraints>
@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI7-xC-3BG">
-                                <rect key="frame" x="16" y="116" width="568" height="80"/>
+                                <rect key="frame" x="16" y="160" width="568" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="at4-2X-eae"/>
                                 </constraints>
@@ -34,40 +34,102 @@
                                 <color key="textColor" red="0.79989252649999998" green="0.0" blue="0.061590704429999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-tD-HvC">
-                                <rect key="frame" x="16" y="480" width="568" height="100"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZc-Oe-RAv">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="izw-ll-zR5"/>
+                                    <barButtonItem title="Start Recording" id="wEi-2B-Lno">
+                                        <connections>
+                                            <action selector="recordTapped:" destination="vXZ-lx-hvc" id="3zP-M5-Y4a"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qCO-tW-f3U"/>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn5-wF-1bK">
+                                <rect key="frame" x="0.0" y="456" width="300" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="h2d-AN-WPh"/>
+                                    <constraint firstAttribute="height" constant="100" id="5cs-ND-Ylk"/>
                                 </constraints>
-                                <state key="normal" title="Start Recording">
+                                <state key="normal" title="Forehand">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8W4-t9-yEK"/>
+                                    <action selector="leftButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cl8-sq-86v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzf-hj-uLm">
+                                <rect key="frame" x="300" y="456" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="X2b-dN-5ZV"/>
+                                </constraints>
+                                <state key="normal" title="Backhand">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rightButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BAb-3x-GaI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Zn5-wF-1bK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Abq-Ar-sNT"/>
                             <constraint firstItem="bI7-xC-3BG" firstAttribute="top" secondItem="Fz4-3B-ctx" secondAttribute="bottom" constant="8" id="B9u-qm-Z6L"/>
+                            <constraint firstAttribute="trailing" secondItem="WZc-Oe-RAv" secondAttribute="trailing" id="CQE-M4-vb3"/>
+                            <constraint firstItem="wzf-hj-uLm" firstAttribute="width" secondItem="Zn5-wF-1bK" secondAttribute="width" id="CxK-wy-EZF"/>
+                            <constraint firstItem="WZc-Oe-RAv" firstAttribute="top" secondItem="Zn5-wF-1bK" secondAttribute="bottom" id="CzV-Ws-hEy"/>
                             <constraint firstItem="bI7-xC-3BG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="D4o-Ko-ful"/>
                             <constraint firstItem="Fz4-3B-ctx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="FXW-MJ-llA"/>
+                            <constraint firstItem="wzf-hj-uLm" firstAttribute="leading" secondItem="Zn5-wF-1bK" secondAttribute="trailing" id="HNd-Sp-c6M"/>
                             <constraint firstItem="Fz4-3B-ctx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="JPW-e0-dXz"/>
-                            <constraint firstItem="cYn-tD-HvC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="OCO-nR-On2"/>
-                            <constraint firstAttribute="trailing" secondItem="cYn-tD-HvC" secondAttribute="trailing" constant="16" id="Oab-bB-LJR"/>
+                            <constraint firstItem="WZc-Oe-RAv" firstAttribute="top" secondItem="wzf-hj-uLm" secondAttribute="bottom" id="RFR-D5-wZy"/>
                             <constraint firstAttribute="trailing" secondItem="bI7-xC-3BG" secondAttribute="trailing" constant="16" id="The-XD-goc"/>
+                            <constraint firstAttribute="trailing" secondItem="wzf-hj-uLm" secondAttribute="trailing" id="d3R-pn-4YV"/>
                             <constraint firstAttribute="trailing" secondItem="Fz4-3B-ctx" secondAttribute="trailing" constant="16" id="mWh-lA-fLa"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cYn-tD-HvC" secondAttribute="bottom" constant="20" id="qUl-pM-D5H"/>
+                            <constraint firstItem="WZc-Oe-RAv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="mja-JX-5rU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="WZc-Oe-RAv" secondAttribute="bottom" id="zrK-MT-Utf"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="e25-CQ-I8G"/>
+                        <barButtonItem title="Start Recording" id="8DO-Kx-c8T">
+                            <connections>
+                                <action selector="recordTapped:" destination="vXZ-lx-hvc" id="Fwc-PA-r0Q"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9ix-dB-DRi"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Data Recording" id="5Cr-Nn-bhL"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="leftButton" destination="Zn5-wF-1bK" id="mDE-v8-Ft9"/>
                         <outlet property="myoStatusLabel" destination="Fz4-3B-ctx" id="4V0-br-dgp"/>
-                        <outlet property="recordingButton" destination="cYn-tD-HvC" id="Muo-rD-msh"/>
+                        <outlet property="recordingButton" destination="wEi-2B-Lno" id="eHo-4W-aAZ"/>
                         <outlet property="recordingStateLabel" destination="bI7-xC-3BG" id="ZY6-e8-tHP"/>
+                        <outlet property="rightButton" destination="wzf-hj-uLm" id="zAw-Sq-rpI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1006" y="-306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x1R-I3-G2X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R3z-DE-3Pz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Qu-Ca-vPx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="RKO-xl-93H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ETN-69-wk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="-306"/>
         </scene>
     </scenes>
 </document>

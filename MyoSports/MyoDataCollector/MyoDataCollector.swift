@@ -75,6 +75,15 @@ class MyoDataCollector: NSObject {
         emgFileName = nil
     }
 
+    func recordEventWithName(name: String) {
+        for (filename, queue) in [(accelFileName, accelQueue), (gyroFileName, gyroQueue), (orientationFileName, orientationQueue), (emgFileName, emgQueue)] {
+            if filename == nil {
+                continue
+            }
+            writeToFile(filename!, value: "Event,\(name)\n", queue: queue)
+        }
+    }
+
     // MARK: - Private Instance Methods
 
     private func setupNotifications() {
