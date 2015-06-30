@@ -8,4 +8,5 @@ Myo Sports is intended to be an app to give athletes more information about thei
 ## Recording
 
 The apps main function right now is data recording. Each recording file is timestamped with the start time, and
-accessbile through iTunes. Files are separated by type of data: IMU, accelerometer, gyroscope, and EMG.
+accessbile through iTunes when the device is connected. Files are separated by type of data: IMU, accelerometer,
+gyroscope, and EMG.
