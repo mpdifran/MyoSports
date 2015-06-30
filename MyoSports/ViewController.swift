@@ -18,7 +18,9 @@ class ViewController: UIViewController {
 
     @IBOutlet var myoStatusLabel: UILabel!
     @IBOutlet var recordingStateLabel: UILabel!
-    @IBOutlet var recordingButton: UIButton!
+    @IBOutlet var recordingButton: UIBarButtonItem!
+    @IBOutlet var leftButton: UIButton!
+    @IBOutlet var rightButton: UIButton!
 
     // MARK: - View Lifecycle
 
@@ -48,22 +50,38 @@ class ViewController: UIViewController {
             myoStatusLabel.text = "Paired with " + myo!.name
             recordingButton.enabled = true
         } else {
-            myoStatusLabel.text = "No Myo paired."
+            myoStatusLabel.text = "Tap a Myo to pair"
             recordingButton.enabled = false
         }
 
         if dataCollector.isRecording {
             recordingStateLabel.hidden = false
-            recordingButton.setTitle("Stop Recording", forState: UIControlState.Normal)
+            leftButton.hidden = false
+            rightButton.hidden = false
+            recordingButton.title = "Stop Recording"
         } else {
             recordingStateLabel.hidden = true
-            recordingButton.setTitle("Start Recording", forState: UIControlState.Normal)
+            leftButton.hidden = true
+            rightButton.hidden = true
+            recordingButton.title = "Start Recording"
         }
     }
 
     // MARK: - IBAction Methods
 
-    @IBAction func recordTapped(sender: UIButton) {
+    @IBAction func leftButtonTapped(sender: UIButton) {
+        if let eventName = sender.titleLabel?.text {
+            dataCollector.recordEventWithName(eventName)
+        }
+    }
+
+    @IBAction func rightButtonTapped(sender: UIButton) {
+        if let eventName = sender.titleLabel?.text {
+            dataCollector.recordEventWithName(eventName)
+        }
+    }
+
+    @IBAction func recordTapped(sender: UIBarButtonItem) {
         dataCollector.toggleRecording()
         updateInterface()
     }
