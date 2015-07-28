@@ -5,6 +5,11 @@ Myo Sports is intended to be an app to give athletes more information about thei
 - Golf
 - Baseball
 
+## First Steps
+
+Some good first steps for the application would be the ability to detect a forehand vs a backhand in tennis, or the
+handedness of a baseball swing.
+
 ## Recording
 
 The apps main function right now is data recording. Each recording file is timestamped with the start time, and
